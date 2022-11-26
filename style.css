@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root 
+{
+    /* Background */
+    --bg-all: #7D2AE8;
+    --bg-login-box: #fff;
+    --bg-principal: linear-gradient(90deg, rgba(38,148,255,1) 14%, rgba(81,38,254,1) 29%, rgba(163,33,255,1) 44%, rgba(255,40,255,1) 60%, rgba(255,51,219,0.9220063025210083) 83%);
+
+    /* Color text */
+    --color-default: #fff;
+    --color-description:#7E7E7E; 
+}
+
+body
+{
+    background: var(--bg-all);
+    height: 100vh;
+}
+
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    height: 100vh;
+}
+
+/* Box */
+.login-box
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background: var(--bg-login-box);
+    border-radius: 15px;
+    box-shadow: 2px 2px 20px  rgba(0, 0, 0, .6), 2px 2px 25px rgba(0, 0, 0, .6);
+}
+
+
+.login-box__header
+{
+    position: absolute;
+    top: 40px;
+    text-align: center;
+}
+
+.header-title
+{
+    font-size: 27px;
+    background: var(--bg-principal);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.header-description-container
+{
+    color: var(--color-description);
+    margin-top: 10px ;
+    width: 300px;
+    font-size: 12px;
+}
+
+
+.login-box__content-inputs
+{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 292px;
+    transform: translateY(27px);
+}
+.password-input-container
+{
+    margin-top: 20px;
+}
+
+label
+{
+    font-size: 15px;
+    margin-right: 10px;
+    display: block;
+    font-weight: 600;
+}
+
+input
+{
+    border: none;
+    border-bottom: 1px solid var(--bg-all);
+    outline: none;
+    width: 300px;
+    transition: all .4s ease;
+
+}
+
+a
+{
+    text-decoration: none;
+    color: #000;
+}
+
+.eye-icon
+{
+    position: absolute;
+    z-index: 99;
+    right: 0;
+    cursor: pointer;
+}
+
+
+.login-box__content-footer
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateY(51px);
+}
+
+button
+{
+    padding: 10px 70px;
+    border-radius: 20px;
+    border: none;
+    font-weight: 600;
+    color: #fff;
+    background: var(--bg-principal);
+    cursor: pointer;
+    transition: all .5s ease;
+
+}
+
+button:hover
+{
+    border: 1px solid #000;
+    color: #000;
+    transition: all .3s ease;
+
+}
+
+.verification-container
+{
+    transform: translateY(-8px);
+}
+
+
+.icons
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transform: translateY(16px);
+    font-size: 20px;
+}
+
+
+.other-options
+{
+    margin: 2px 0;
+}
+
+.other-options span
+{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(126, 126, 126, .8);
+    transform: translateY(-1px);
+}
+
+
+.fa-google
+{
+    color: #FFFB00;
+}
+
+.fa-facebook
+{
+    color: #1098F4;
+}
+
+.fa-instagram
+{
+
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.fa-envelope
+{
+    color: #4864FF;
+}
+
+.verification-text
+{
+color: #FF0000;
+    text-align: center;
+    font-size: 12px;
+}
+
+form
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
