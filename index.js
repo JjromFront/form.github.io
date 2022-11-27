@@ -1,8 +1,12 @@
+let viewPasswordButton = document.querySelector(".eye-icon");
+let textMod = document.querySelector(".verification-text");
+let userInput = document.querySelector("#usernameInput");
+let passwordInput = document.querySelector("#passwordInput");
+let submitButton = document.querySelector("#submitBtn");
+let loginBoxContent = document.querySelector(".login-box-content-all");
+let okBtn = document.querySelector(".okBtn")
 // View password
 function viewPassword() {
-    let viewPasswordButton = document.querySelector(".eye-icon");
-    let passwordInput = document.querySelector("#passwordInput")
-
     viewPasswordButton.addEventListener("click", () => {
         if (viewPasswordButton.classList.contains("fa-eye-slash")) {
             viewPasswordButton.classList.remove("fa-sharp");
@@ -20,25 +24,34 @@ function viewPassword() {
     })
 }
 
-
 function validateUserAndSubmit() {
-    let textMod = document.querySelector(".verification-text");
-    const userInput = document.querySelector("#usernameInput").value;
-    const passwordInput = document.querySelector("#passwordInput").value;
-    const submitButton = document.querySelector("#submitBtn");
-
     submitButton.addEventListener("click", () => {
-        if (userInput.length >= 1 && passwordInput.length >= 1) {
-            textMod.innerHTML = '<i class="fa-solid fa-shield-check"></i>  All the fields had been filled correctly, redirecting...';
+        if (userInput.value.length >= 1 && passwordInput.value.length >= 1) {
+            textMod.innerHTML ='<i class="fa-solid fa-circle-check"></i>  All the fields had been filled correctly, redirecting...';
+            textMod.style.color = "#4caf50";
+            setTimeout(() => {
+
+                loginBoxContent.classList.add("submited")
+            }, 3000)
         }
-        else if (userInput == "" || passwordInput == "") {
-            textMod.innerHTML = '<i class="fa-solid fa-xmark"></i>  There are one or two fields that have not been filled in yet';
+        else if (userInput.value == "" || passwordInput.value == "") {
+            textMod.innerHTML = '<i class="fa-solid fa-xmark"></i>  There are one or two fields that have not been filled in yet.';
+            textMod.style.color = "#f44336";
         }
 
-        console.log(userInput.length)
+        
+    })
+}
+
+function returnSubmited() {
+    okBtn.addEventListener("click", () => {
+        loginBoxContent.classList.remove("submited")
+        userInput.value = "";
+        passwordInput.value = "";
+        textMod.innerHTML = "";
     })
 }
 
 viewPassword();
 validateUserAndSubmit();
-
+returnSubmited();

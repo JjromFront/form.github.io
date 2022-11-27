@@ -48,9 +48,29 @@ body
     background: var(--bg-login-box);
     border-radius: 15px;
     box-shadow: 2px 2px 20px  rgba(0, 0, 0, .6), 2px 2px 25px rgba(0, 0, 0, .6);
+    transition: all .5s ease;
 }
 
+form
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.login-box-content-principal
+{
+    display: flex;
+    justify-content: center;
+}
+
+.login-box-content-submited
+{
+    display: none;
+}
+/* End box */
+
+/* Login header */
 .login-box__header
 {
     position: absolute;
@@ -75,7 +95,9 @@ body
     font-size: 12px;
 }
 
+/* Login Header end */
 
+/* Login content */
 .login-box__content-inputs
 {
     display: flex;
@@ -105,7 +127,13 @@ input
     outline: none;
     width: 300px;
     transition: all .4s ease;
+    
+}
 
+.verification-text
+{
+    text-align: center;
+    font-size: 12px;
 }
 
 a
@@ -114,6 +142,11 @@ a
     color: #000;
 }
 
+.fa-circle-check
+{
+    transform: translateY(0);
+    transform: translateX(0);
+}
 .eye-icon
 {
     position: absolute;
@@ -121,8 +154,9 @@ a
     right: 0;
     cursor: pointer;
 }
+/* Login content end */
 
-
+/* Login footer */
 .login-box__content-footer
 {
     display: flex;
@@ -132,7 +166,7 @@ a
     transform: translateY(51px);
 }
 
-button
+#submitBtn
 {
     padding: 10px 70px;
     border-radius: 20px;
@@ -145,7 +179,7 @@ button
 
 }
 
-button:hover
+#submitBtn:hover
 {
     border: 1px solid #000;
     color: #000;
@@ -213,17 +247,70 @@ button:hover
 {
     color: #4864FF;
 }
+/* Login footer end */
 
-.verification-text
+
+/* When submited */
+
+.submited .login-box
 {
-color: #FF0000;
-    text-align: center;
-    font-size: 12px;
+    width: 300px;
+    height: 300px;
+    transition: all .5s ease;
+
+}
+.submited .login-box-content-principal
+{
+    display: none;
 }
 
-form
+.submited .login-box-content-submited
 {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    transition: all .5s ease;
+}
+
+.submited .login-box-content-submited img
+{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    transform: translateY(-63px);
+}
+
+.submited .login-box-content-submited h1
+{
+    transform: translateY(-72px);
+}
+
+.submited .login-box-content-submited .submited-description
+{
+    text-align: center;
+    font-size: 12px;
+    transform: translateY(-64px);
+    width: 240px;
+}
+
+.submited .login-box-content-submited .okBtn
+{
+    transform: translateY(-22px);
+    border: none;
+    outline: none;
+    padding: 10px 100px;
+    border-radius: 20px;
+    background: #6BC259;
+    color: #fff;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.submited .login-box-content-submited .okBtn:hover
+{
+    background: #9CD690;
+    transition: all .4s ease;
+
 }
